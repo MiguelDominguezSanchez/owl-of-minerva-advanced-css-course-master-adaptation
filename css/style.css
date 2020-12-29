@@ -97,6 +97,17 @@ font-weight: 400;
 /* letter-spacing: 35px; */
 /* margin-bottom: -30px; Own style to join spans h1 */
 line-height: 50px;
+
+animation-name: moveInTop;
+animation-duration: 1s;
+/* animation-timing-function: ease-out; */
+animation-timing-function: ease-in-out;
+
+
+/* animation-delay: 3s; */
+/* animation-iteration-count: 3; */
+/* animation-timing-function: ease-in; */
+
 }
 
 .heading-primary-sub{
@@ -105,7 +116,69 @@ line-height: 50px;
     font-weight: 700;
     /* letter-spacing: 17.4px; */
     letter-spacing: 0.5px;
+    /* animation: moveInRight 1s ease-out; */
+
+    animation: moveInBottom 1s;
+
+    animation-timing-function: ease;
 }
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    80% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* screen sizes */
 
