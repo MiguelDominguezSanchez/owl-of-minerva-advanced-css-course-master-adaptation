@@ -1,0 +1,30 @@
+{
+  "name": "owl-of-minerva",
+  "version": "1.0.0",
+  "description": "Lading page owl of Minerva",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0wlofminerva/owl-of-minerva-advanced-css-course-master-adaptation.git"
+  },
+  "keywords": [
+    "Inpray1"
+  ],
+  "author": "Miguel Domínguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0wlofminerva/owl-of-minerva-advanced-css-course-master-adaptation/issues"
+  },
+  "homepage": "https://github.com/0wlofminerva/owl-of-minerva-advanced-css-course-master-adaptation#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0"
+  }
+}

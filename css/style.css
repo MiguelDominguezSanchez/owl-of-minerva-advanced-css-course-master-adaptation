@@ -1,17 +1,17 @@
-/* OoM */
+/* OM */
 
 /*
 COLORS:
 
-White: #fff
-Medium orange: #f49731
+White: #fff 
+Medium orange: #f49731 
 Dark blue: #1a1832
 
 */
 
 /* typography */
 
-    /* font-family: 'Cinzel',
+/* font-family: 'Cinzel',
     serif;
 
     font-family: 'Cinzel Decorative',
@@ -33,9 +33,6 @@ Dark blue: #1a1832
 
 html {
     font-size: 62.5%;
-    /* 1rem is equal to 10px */
-    /* 1rem rem is exactly the font-size
-    10 pixels is the root size */
 }
 
 /* Font properties for the entire website */
@@ -48,11 +45,9 @@ font-family: 'Cinzel', serif;
 font-weight: 400;
 /* font-size: 16px; */
 line-height: 1.7;
-color: #777;
+color: #1a1832;
 padding: 3rem;
 /* padding applied to the entire webpage */
-
-box-sizing: border-box;
 }
 
 /* this code performs a basic reset, and also a font weight definitions, in the body selector, it will be inherited in the child elements */
@@ -61,7 +56,7 @@ box-sizing: border-box;
     height: 95vh;
     /* every point of the height should be 95% of the viewport height */
     background-image: linear-gradient(
-        to left top, 
+        to left top,
         #f4973180,
         #1a183250),
         url(../img/hero.jpg); /* Specify Owl Color Palette & dierction  & opacity */
@@ -71,11 +66,10 @@ box-sizing: border-box;
     /* whatever the viweport size is, this img always stays at the top of the container */
     position: relative; /*The origin reference from which top & left of logo-box start to count*/
 
-    /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box{
+.header__logo-box{
 position: absolute;
 top: 4rem; /**/
 left: 4rem; /**/
@@ -83,18 +77,21 @@ left: 4rem; /**/
 /* the reference to start counting 40px to the top & left is the parent elment header with position relative */
 }
 
-.logo{
+.header__logo {
 height: 5rem;
 }
 
-.text-box{
+/* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
+
+.header__text-box {
     position: absolute;
     /* in the middle of the header */
     top: 40%;
     left: 50%; /* of the parent element */
     transform: translate(-50%, -50%); /* no longer from parent element but from the elment itself */
-     text-align: center;
-     /* center the text inside of the box & the btn */
+    text-align: center; /* center the text inside of the box & the btn */
 }
 
 .heading-primary{
@@ -105,18 +102,16 @@ backface-visibility: hidden;
 margin-bottom: 6rem;
 }
 
-.heading-primary-main{
+.heading-primary--main{
 display:block;
 /* it creates line breaks after & before them */
-font-size: 6rem;
+font-size: 60px;
 font-weight: 400;
-/* letter-spacing: 35px; */
-/* margin-bottom: -30px; Own style to join spans h1 */
-line-height: 5rem;
+/* letter-spacing: .5rem; */
+letter-spacing: .66rem;
 
 animation-name: moveInTop;
 animation-duration: 1s;
-/* animation-timing-function: ease-out; */
 animation-timing-function: ease-in-out;
 
 
@@ -124,20 +119,16 @@ animation-timing-function: ease-in-out;
 /* animation-iteration-count: 3; */
 /* animation-timing-function: ease-in; */
 
+line-height: .8;
+
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
     font-size: .85rem;
     font-weight: 700;
-    /* letter-spacing: 17.4px; */
-    /* letter-spacing: 17.4px; */
-    letter-spacing: .531rem;
-    /* animation: moveInRight 1s ease-out; */
-
-    animation: moveInBottom 1s;
-
-    animation-timing-function: ease;
+    letter-spacing: .7rem;
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInTop {
@@ -156,15 +147,27 @@ animation-timing-function: ease-in-out;
     }
 }
 
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 @keyframes moveInBottom {
     0% {
         opacity: 0;
         transform: translateY(3rem);
     }
-
-    80% {
-         transform: translateY(-1rem);
-     }
 
     100% {
         opacity: 1;
@@ -174,11 +177,10 @@ animation-timing-function: ease-in-out;
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
+    text-transform:uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
-    display: inline-block;
-    /* model-box works as a modal block */
+    display: inline-block; /* model-box works as a modal block */
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
@@ -186,25 +188,25 @@ animation-timing-function: ease-in-out;
 
 }
 
-.btn:hover {
+.btn:hover{
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 }
 
-.btn:active {
+.btn:active{
     transform: translateY(-1px);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #1a1832;
 }
 
 .btn::after {
-    content: ""; /* to appear in the page a pseudo-element specify content property, otherwise is not going to appear */
-    display: inline-block; /* exactly look the same of inline block btn */
-    height: 100%; /* replicate exact same dimesion of parent */
+    content: "";
+    display: inline-block;
+    height: 100%;
     width: 100%;
     border-radius: 10rem;
     position: absolute;
@@ -214,7 +216,7 @@ animation-timing-function: ease-in-out;
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -223,15 +225,11 @@ animation-timing-function: ease-in-out;
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
 
-.btn-container {
-    margin: 5rem;
-    font-weight: 700;
-}
 
 
 
@@ -257,11 +255,21 @@ animation-timing-function: ease-in-out;
 
 
 
-/* screen sizes */
 
-/* @media (max-width: 768px) {
-.heading-primary-sub {
-            font-size: 8px;
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+/* @media (max-width: 1260px) {
+    .heading-primary-sub {
+        font-size: .66rem;
     }
 } */
 
@@ -270,5 +278,4 @@ animation-timing-function: ease-in-out;
         font-size: .75rem;
     }
 }
-
 
