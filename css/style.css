@@ -81,7 +81,8 @@ height: 50px;
     top: 40%;
     left: 50%; /* of the parent element */
     transform: translate(-50%, -50%); /* no longer from parent element but from the elment itself */
-
+     text-align: center;
+     /* center the text inside of the box & the btn */
 }
 
 .heading-primary{
@@ -153,6 +154,33 @@ animation-timing-function: ease-in-out;
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    /* model-box works as a modal block */
+    border-radius: 100px;
+    transition: all .2s;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
 
 
