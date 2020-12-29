@@ -1,3 +1,5 @@
+/* OoM */
+
 /*
 COLORS:
 
@@ -6,6 +8,14 @@ Medium orange: #f49731
 Dark blue: #1a1832
 
 */
+
+/* typography */
+
+    /* font-family: 'Cinzel',
+    serif;
+
+    font-family: 'Cinzel Decorative',
+    cursive; */
 
 /* The Universal selector select each & every elment in the page & apply this declaration to it */
 * {
@@ -23,7 +33,8 @@ Dark blue: #1a1832
 /* becasue the properties of font are uusually inherited
 so we are using the power of inheritance here */
 body{
-font-family: "Lato", sans-serif;
+/* font-family: "Lato", sans-serif; */
+font-family: 'Cinzel', serif;
 font-weight: 400;
 font-size: 16px;
 line-height: 1.7;
@@ -38,7 +49,7 @@ padding: 30px;
     height: 95vh;
     /* every point of the height should be 95% of the viewport height */
     background-image: linear-gradient(
-        to right bottom, 
+        to left top, 
         #f4973180,
         #1a183280),
         url(../img/hero.jpg); /* Specify Owl Color Palette & dierction  & opacity */
@@ -46,6 +57,68 @@ padding: 30px;
     /* whatever the width of the viewport of the element it tries to fit the elment iinside of the box */
     background-position: top; /* change to center Owl */
     /* whatever the viweport size is, this img always stays at the top of the container */
+    position: relative; /*The origin reference from which top & left of logo-box start to count*/
 
+    /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
+
+.logo-box{
+position: absolute;
+top: 40px; /**/
+left: 40px; /**/
+/* to put exactly the image where we want it to be, top, bottoom, left, right */
+/* the reference to start counting 40px to the top & left is the parent elment header with position relative */
+}
+
+.logo{
+height: 50px;
+}
+
+.text-box{
+    position: absolute;
+    /* in the middle of the header */
+    top: 40%;
+    left: 50%; /* of the parent element */
+    transform: translate(-50%, -50%); /* no longer from parent element but from the elment itself */
+
+}
+
+.heading-primary{
+color:#fff;
+text-transform: uppercase;
+}
+
+.heading-primary-main{
+display:block;
+/* it creates line breaks after & before them */
+font-size: 60px;
+font-weight: 400;
+/* letter-spacing: 35px; */
+/* margin-bottom: -30px; Own style to join spans h1 */
+line-height: 50px;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    /* letter-spacing: 17.4px; */
+    letter-spacing: 0.5px;
+}
+
+/* screen sizes */
+
+/* @media (max-width: 768px) {
+.heading-primary-sub {
+            font-size: 8px;
+    }
+} */
+
+@media (max-width: 1111px) {
+    .heading-primary-sub {
+        font-size: 8px;
+    }
+}
+
+
