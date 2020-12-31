@@ -105,7 +105,7 @@ margin-bottom: 6rem;
 .heading-primary--main{
 display:block;
 /* it creates line breaks after & before them */
-font-size: 60px;
+font-size: 5rem;
 font-weight: 400;
 /* letter-spacing: .5rem; */
 letter-spacing: .66rem;
@@ -121,13 +121,18 @@ animation-timing-function: ease-in-out;
 
 line-height: .8;
 
+padding: 0 2rem;
+
 }
 
 .heading-primary--sub{
     display: block;
-    font-size: .85rem;
-    font-weight: 700;
-    letter-spacing: .7rem;
+    /* font-size: .85rem; */
+    font-size: 1rem;
+    /* font-weight: 700; */
+    font-weight: 900;
+    /* letter-spacing: .7rem; */
+    letter-spacing: 2.2rem;
     animation: moveInRight 1s ease-out;
 }
 
