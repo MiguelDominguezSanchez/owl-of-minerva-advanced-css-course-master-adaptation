@@ -62,8 +62,8 @@ body {
     height: 95vh;
     /* every point of the height should be 95% of the viewport height */
     background-image: linear-gradient(to left top,
-            #f4973180,
-            #1a183250),
+           rgba($color-medium-orange, 0.5),
+           rgba($color-dark-blue, 0.8)),
         url(../img/hero.jpg);
     /* Specify Owl Color Palette & dierction  & opacity */
     background-size: cover;
@@ -75,37 +75,39 @@ body {
     /*The origin reference from which top & left of logo-box start to count*/
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    /**/
-    left: 4rem;
-    /**/
-    /* to put exactly the image where we want it to be, top, bottoom, left, right */
-    /* the reference to start counting 40px to the top & left is the parent elment header with position relative */
-}
+    &__logo-box {
+            position: absolute;
+            top: 4rem;
+            /**/
+            left: 4rem;
+            /**/
+            /* to put exactly the image where we want it to be, top, bottoom, left, right */
+            /* the reference to start counting 40px to the top & left is the parent elment header with position relative */
+    }
 
-.header__logo {
-    height: 5rem;
-}
+    &__logo {
+        height: 5rem;
+    }
 
-/* .logo:hover {
+    /* .logo:hover {
     animation: moveInRight 1s ease-out;
 } */
 
-.header__text-box {
-    position: absolute;
-    /* in the middle of the header */
-    top: 40%;
-    left: 50%;
-    /* of the parent element */
-    transform: translate(-50%, -50%);
-    /* no longer from parent element but from the elment itself */
-    text-align: center;
-    /* center the text inside of the box & the btn */
+    &__text-box {
+        position: absolute;
+        /* in the middle of the header */
+        top: 40%;
+        left: 50%;
+        /* of the parent element */
+        transform: translate(-50%, -50%);
+        /* no longer from parent element but from the elment itself */
+        text-align: center;
+        /* center the text inside of the box & the btn */
+    }
 }
+
+
 
 .heading-primary {
     color: #fff;
@@ -113,41 +115,43 @@ body {
 
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        /* it creates line breaks after & before them */
+        font-size: 5rem;
+        font-weight: 400;
+        /* letter-spacing: .5rem; */
+        letter-spacing: .66rem;
+
+        animation-name: moveInTop;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+
+
+        /* animation-delay: 3s; */
+        /* animation-iteration-count: 3; */
+        /* animation-timing-function: ease-in; */
+
+        line-height: .8;
+
+        padding: 0 2rem;
+
+    }
+
+    &--sub {
+        display: block;
+        /* font-size: .85rem; */
+        font-size: 1rem;
+        /* font-weight: 700; */
+        font-weight: 900;
+        /* letter-spacing: .7rem; */
+        letter-spacing: 2.2rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
-.heading-primary--main {
-    display: block;
-    /* it creates line breaks after & before them */
-    font-size: 5rem;
-    font-weight: 400;
-    /* letter-spacing: .5rem; */
-    letter-spacing: .66rem;
 
-    animation-name: moveInTop;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-
-
-    /* animation-delay: 3s; */
-    /* animation-iteration-count: 3; */
-    /* animation-timing-function: ease-in; */
-
-    line-height: .8;
-
-    padding: 0 2rem;
-
-}
-
-.heading-primary--sub {
-    display: block;
-    /* font-size: .85rem; */
-    font-size: 1rem;
-    /* font-weight: 700; */
-    font-weight: 900;
-    /* letter-spacing: .7rem; */
-    letter-spacing: 2.2rem;
-    animation: moveInRight 1s ease-out;
-}
 
 @keyframes moveInTop {
     0% {
@@ -193,61 +197,67 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    /* model-box works as a modal block */
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        /* model-box works as a modal block */
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+
+        &::after {
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    }
+
+    &--white {
+        background-color: #fff;
+        color: #1a1832;
+
+        &::after {
+            background-color: #fff;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
 
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-}
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-}
-
-.btn--white {
-    background-color: #fff;
-    color: #1a1832;
-}
-
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-.btn--white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.5) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn--animated {
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards;
-}
 
 
 

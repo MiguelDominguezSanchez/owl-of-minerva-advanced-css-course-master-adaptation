@@ -51,8 +51,8 @@ body {
 .header {
   height: 95vh;
   /* every point of the height should be 95% of the viewport height */
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#f4973180), to(#1a183250)), url(../img/hero.jpg);
-  background-image: linear-gradient(to left top, #f4973180, #1a183250), url(../img/hero.jpg);
+  background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(244, 151, 49, 0.5)), to(rgba(26, 24, 50, 0.8))), url(../img/hero.jpg);
+  background-image: linear-gradient(to left top, rgba(244, 151, 49, 0.5), rgba(26, 24, 50, 0.8)), url(../img/hero.jpg);
   /* Specify Owl Color Palette & dierction  & opacity */
   background-size: cover;
   /* whatever the width of the viewport of the element it tries to fit the elment iinside of the box */
@@ -63,6 +63,9 @@ body {
   /*The origin reference from which top & left of logo-box start to count*/
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
 }
 
 .header__logo-box {
@@ -79,9 +82,6 @@ body {
   height: 5rem;
 }
 
-/* .logo:hover {
-    animation: moveInRight 1s ease-out;
-} */
 .header__text-box {
   position: absolute;
   /* in the middle of the header */
@@ -229,8 +229,7 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -250,6 +249,12 @@ body {
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.btn:hover::after {
+  -webkit-transform: scaleX(1.5) scaleY(1.6);
+          transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
 .btn:active {
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
@@ -260,6 +265,10 @@ body {
 .btn--white {
   background-color: #fff;
   color: #1a1832;
+}
+
+.btn--white::after {
+  background-color: #fff;
 }
 
 .btn::after {
@@ -274,16 +283,6 @@ body {
   z-index: -1;
   -webkit-transition: all .4s;
   transition: all .4s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  -webkit-transform: scaleX(1.5) scaleY(1.6);
-          transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0;
 }
 
 .btn--animated {
