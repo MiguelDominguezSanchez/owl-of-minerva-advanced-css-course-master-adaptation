@@ -1,0 +1,54 @@
+/* OM */
+
+/*
+COLORS:
+
+White: #fff 
+Medium orange: #f49731 
+Dark blue: #1a1832
+
+*/
+
+/* typography */
+
+/* font-family: 'Cinzel',
+    serif;
+
+    font-family: 'Cinzel Decorative',
+    cursive; */
+
+/* this code performs a basic reset, and also a font weight definitions, in the body selector, it will be inherited in the child elements */
+
+
+/* The Universal selector select each & every elment in the page & apply this declaration to it */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* Start clean without any default browser margings or paddings */
+    /* box-sizing: border-box; */
+    /* Change the box model, so that the borders & the paddiings are no longer edited to the widtth or the totla height that are specified for a box
+    so that without any paddings & borders are edited to the height & width of an element,
+    helpful for getting rid of that behaviour */
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Font properties for the entire website */
+/* in the body selector */
+/* becasue the properties of font are uusually inherited
+so we are using the power of inheritance here */
+body {
+    /* font-family: "Lato", sans-serif; */
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: #1a1832;
+    padding: 3rem;
+    /* padding applied to the entire webpage */
+}

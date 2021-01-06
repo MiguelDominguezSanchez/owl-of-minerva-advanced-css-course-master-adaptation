@@ -1,0 +1,48 @@
+.header {
+    height: 95vh;
+    /* every point of the height should be 95% of the viewport height */
+    background-image: linear-gradient(to left top,
+            rgba($color-medium-orange, 0.5),
+            rgba($color-dark-blue, 0.8)),
+        url(../img/hero.jpg);
+    /* Specify Owl Color Palette & dierction  & opacity */
+    background-size: cover;
+    /* whatever the width of the viewport of the element it tries to fit the elment iinside of the box */
+    background-position: top;
+    /* change to center Owl */
+    /* whatever the viweport size is, this img always stays at the top of the container */
+    position: relative;
+    /*The origin reference from which top & left of logo-box start to count*/
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        /**/
+        left: 4rem;
+        /**/
+        /* to put exactly the image where we want it to be, top, bottoom, left, right */
+        /* the reference to start counting 40px to the top & left is the parent elment header with position relative */
+    }
+
+    &__logo {
+        height: 5rem;
+    }
+
+    /* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
+
+    &__text-box {
+        position: absolute;
+        /* in the middle of the header */
+        top: 40%;
+        left: 50%;
+        /* of the parent element */
+        transform: translate(-50%, -50%);
+        /* no longer from parent element but from the elment itself */
+        text-align: center;
+        /* center the text inside of the box & the btn */
+    }
+}
